@@ -1,4 +1,4 @@
-target_dir = $1
+target_dir=$1
 
 cd target_dir
 
