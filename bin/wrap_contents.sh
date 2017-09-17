@@ -9,5 +9,5 @@ then
 	touch $TARGET_FILE
 fi	
 
-cat "$WRAPPER"_header.html "$CONTENTS_FILE" "$WRAPPER"_footer.html > "$TARGET_FILE"
+cat "$WRAPPER"_header.html "$CONTENTS_FILE" "$WRAPPER"_footer.html >> "$TARGET_FILE"
 
