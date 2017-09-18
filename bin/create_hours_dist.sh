@@ -1,13 +1,9 @@
 target_dir=$1
 
-ls $target_dir
-
 echo -n "" > failed_login_data_full.txt
 
 dirs=$target_dir/*
 current_dir=$(pwd)
-
-ls $target_dir
 
 for i in $dirs
 do
@@ -23,8 +19,6 @@ touch hours_body.html
 
 echo -n '' > hours_body.html
 
-cat temp_login_data.txt
-
 cat temp_login_data.txt | while read line;
 do
     loginCount=$(echo $line | awk '{ print $1 }')
@@ -38,4 +32,5 @@ done
 
 ./bin/wrap_contents.sh hours_body.html html_components/hours_dist $target_dir/hours_dist.html
 
+rm -f failed_login_data_full.txt temp_login_data.txt hours_body.html
 

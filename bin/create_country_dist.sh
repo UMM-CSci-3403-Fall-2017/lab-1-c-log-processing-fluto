@@ -26,7 +26,6 @@ echo -n '' > country_ip_codes.txt
 echo -n '' > country_code_count.txt
 echo -n '' > country_code_body.html
 
-#cat failed_login_data_full.txt | awk '{ print $5 }' | grep etc/country_IP_map.txt 
 cat failed_login_data_full.txt | while read line;
 do
 	IP_ADDRESS=$(echo $line | awk '{ print $5 }')
@@ -46,8 +45,6 @@ do
     	echo "]);" >> country_code_body.html
 done
 
-cat country_code_body.html
-echo "got here"
-
 ./bin/wrap_contents.sh country_code_body.html html_components/country_dist $TARGET_DIR/country_dist.html
 
+rm -f  failed_login_data_full.txt country_ip_addresses.txt country_ip_codes.txt country_code_count.txt country_code_body.html
