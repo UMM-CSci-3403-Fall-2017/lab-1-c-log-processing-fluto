@@ -13,7 +13,10 @@ CURRENT_DIR=$(pwd)
 
 for i in $DIRS
 do
-	cat $i/failed_login_data.txt >> $CURRENT_DIR/failed_login_data_full.txt
+	if [ -f $i/failed_login_data.txt ]
+	then
+		cat $i/failed_login_data.txt >> $CURRENT_DIR/failed_login_data_full.txt
+	fi
 done
 
 touch country_ip_addresses.txt

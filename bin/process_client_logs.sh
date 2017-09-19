@@ -4,9 +4,6 @@ cd $target_dir
 
 files=var/log/*
 
-echo $(pwd)
-ls
-
 echo -n "" > failed_login_data.txt
 for i in $files
 do

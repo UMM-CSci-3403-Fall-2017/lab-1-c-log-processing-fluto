@@ -8,8 +8,10 @@ current_dir=$(pwd)
 
 for i in $dirs
 do
-    cat $i/failed_login_data.txt >> $current_dir/failed_login_data_full.txt
-
+    	if [ -f $i/failed_login_data.txt ]
+	then
+		cat $i/failed_login_data.txt >> $current_dir/failed_login_data_full.txt
+	fi
 done
 
 echo -n '' > temp_login_data.txt
